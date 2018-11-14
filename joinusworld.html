@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+	<title>joinusworld.org Sample</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!--구글 제이쿼리 URL-->
+<script src="/resource/js/semantic.min.js"></script><!--시멘틱 ui라이브러리-->
+<link rel="stylesheet" type="text/css" href="/resource/css/semantic.min.css"></link><!--시멘틱 ui라이브러리-->
+<link rel="stylesheet" type="text/css" href="/resource/css/style.css"></link><!--시멘틱 ui라이브러리-->
+
+<script type="text/javascript">
+/***************************************
+* 시간관계상 ui라이브러리를 사용하여 디자인 사용 해당 ui라이브러리 api는 https://semantic-ui.com/introduction/getting-started.html 참조
+* 
+*
+*
+***************************************/
+$(document).ready(function(){
+	ready.init();
+
+	//체크박스 이벤트 활성화
+	$('.checkAll').on('click',function(){
+		var checkboxes = ('input.checker[type=checkbox]');
+		if($(this).is(':checked')){
+			$(checkboxes).prop("checked", true);
+		}else{			
+			$(checkboxes).prop("checked", false);
+		}
+	});
+	//하단 버튼 이벤트 활성화 
+	$('#author').on('click',function(){
+		if($(this).is(':checked')){
+			$('.authorText').removeClass('hide');
+			$(".common-text").attr("disabled",false); 
+		}else{
+			$('.authorText').addClass('hide');
+			$(".common-text").val(""); 
+		 	$(".common-text").attr("disabled",true); 
+		}		
+	});
+
+	$('#search').on('click',function(){
+		alert('해당 검색기능은 추후 지원 할 예정입니다.');
+	});
+	$('#modals').on('click',function(){
+		$('.ui.modal').modal('show');
+	});
+});
+function hasAnyText(obj){
+	if($(obj).val().length>0){
+		$('.keyword').addClass('hide');
+	}else{
+		$('.keyword').removeClass('hide');
+	}
+}
+var ready={
+	init:function(){
+		$('.authorText').addClass('hide');
+		$(".common-text").attr("disabled",true); 
+	}
+}
+</script>
+</head>
+<body>
+		<header>
+			<h1 class="ui center aligned header"> 조인어스월드 - 들국화 샘플 페이지</h1>
+		</header>
+		<article>
+			<form class="ui fluid form">	
+				<div class="container">
+					<div class="search-area">
+							<div class="text-group">
+						    	<input type="text" class="" placeholder="Keyword" onkeyup="hasAnyText(this)" >
+						    	<div class="ui pointing red  label keyword">키워드를 입력하세요</div>
+					   		</div>
+					   		<div class="ui toggle checkbox chk-author">
+								<input type="checkbox" id="author">
+								<label>author</label>
+							</div>
+					   		<div class="text-group">
+						    	<input type="text" class="common-text" placeholder="" onkeyup="hasAnyText(this)">
+						    	<div class="ui pointing red  label authorText">작성자를 입력하세요</div>
+					   		</div>
+					   		<div class="btn-search">
+					   			<button class="ui button active" id="search">search</button>
+					   		</div>
+
+					</div>
+					<table class="ui celled padded striped  table">
+					  <thead>
+					    <tr>
+					    	<th class="single line">
+								<div class="ui toggle checkbox">
+								  <input type="checkbox"  class="checkAll">
+								 <!--라벨이 필요함 -->
+								  <label></label>
+								</div>
+					    	</th>
+						    <th>solved</th>
+						    <th>Votes</th>
+						    <th>Title</th>
+						    <th>Author</th>
+						    <th>Language</th>
+						    <th>Last Modified</th>
+						    <th>View</th>
+						    <th>Status</th>
+						</tr>
+					</thead>
+					  <tbody>
+					    <tr>
+					    	<th class="single line">
+								<div class="ui toggle checkbox">
+								  <input type="checkbox" class="checker" name="sampler">
+								 <!--라벨이 필요함 -->
+								  <label></label>
+								</div>
+					    	</th>
+						    <th>solved</th>
+						    <th>10</th>
+						    <th>안녕하세요1</th>
+						    <th>홍길동</th>
+						    <th>Korean</th>
+						    <th>2018-11-14</th>
+						    <th>9</th>
+						    <th>public</th>
+					    </tr>
+					    <tr>
+					    	<th class="single line">
+								<div class="ui toggle checkbox">
+								  <input type="checkbox" class="checker" name="sampler">
+								 <!--라벨이 필요함 -->
+								  <label></label>
+								</div>
+					    	</th>
+						    <th></th>
+						    <th>100</th>
+						    <th>Hello world!</th>
+						    <th>Cristiano Ronaldo</th>
+						    <th>Portugal</th>
+						    <th>2018-11-13</th>
+						    <th>200</th>
+						    <th>private</th>
+					    </tr>
+					    <tr>
+					    	<th class="single line">
+								<div class="ui toggle checkbox">
+								  <input type="checkbox" class="checker" name="sampler">
+								 <!--라벨이 필요함 -->
+								  <label></label>
+								</div>
+					    	</th>
+						    <th>solved</th>
+						    <th>1000</th>
+						    <th>ni hao!</th>
+						    <th>Xin Zhao</th>
+						    <th>chinese</th>
+						    <th>2018-11-12</th>
+						    <th>123</th>
+						    <th>public</th>
+					    </tr>
+					    <tr>
+					    	<th class="single line">
+								<div class="ui toggle checkbox">
+								  <input type="checkbox" class="checker" name="sampler">
+								 <!--라벨이 필요함 -->
+								  <label></label>
+								</div>
+					    	</th>
+						    <th></th>
+						    <th>10000</th>
+						    <th>마지막입니다</th>
+						    <th>작성자짱</th>
+						    <th>Korean</th>
+						    <th>2018-11-11</th>
+						    <th>12345</th>
+						    <th>private</th>
+					    </tr>
+
+					  </tbody>
+					</table>
+				</div>
+			</form>
+			<div class="pickMeUp">
+				<button class="ui secondary button btn-pick" id="modals">
+					작업관련 세부사항
+				</button>
+			</div>
+			<div class="ui modal">
+			  <p class="close icon">X</p>
+			  <div class="header">
+			    작업관련 세부사항
+			  </div>
+			  <div class="image content">
+			    <div class="ui medium image">
+			    </div>
+			    <div class="description">
+			      <div class="ui header">작업 선정 및 반영 방식</div>
+			      <p>작업 진행은 홈페이지에 사용중인 react.js를 사용하려 했으나 메일송신용량 및 구현기간이 길어짐에 따라 제외하게 되었습니다. 이번 작업을 진행하면서 기존에 작업해보지 않은 새로운 UI라이브러리를 하나 선정하여 진행하기로 함에 따라 semantic-ui를 선정하여 작업하게 되었습니다.</p>
+			      <p>semantic-ui내부 API를 최우선적으로 선정하여 사용하였으며 해당 라이브러리에 있는 리스트를 사용하여 보내주신 화면을 기준으로 작업하였습니다.</p>
+			      <p>봉사활동 실적으로 <b>30시간</b>정도 필요합니다. <b>*봉사활동을 진행하게 된다면 해당 기간에 맞는 작업을 진행했으면 좋겠습니다!!!!*</b></p>
+
+			      <p><h3 style="text-align: center">제작시간</h3></p>
+			      <p>작업방식선정 	           : 60min (react.js 제외등 작업구상  및 웹서버 선택) </p>
+			      <p>UI라이브러리선정 	       : 45min 							    			</p>
+			      <p>Layout구성 및 마크업 구현  : 105min											</p>
+			      <p>간단한 기능구현 및 마감작업(설명 및 readme) :90min							</p>
+    			  <p style="color: red">총 제작시간  :5h(5시간) 11.04 19:00-24:00		        	</p>
+    			  <p><b>봉사자 : 문시언 연락처 : 010-5097-8901</b>								</p>
+		  		  <p>감사합니다.																	</p>
+			    </div>
+			  </div>
+			  <div class="actions">
+			    <div class="ui positive right labeled icon button">
+					모달 닫기
+			    </div>
+			  </div>
+			</div>
+		</article>
+		<footer>
+
+		</footer>
+
+
+</body>
+</html>

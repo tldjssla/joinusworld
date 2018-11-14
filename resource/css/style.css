@@ -1,0 +1,64 @@
+@import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+	body{
+			  font-family: "Nanum Gothic", sans-serif;
+	}
+	.container{
+		width: 80%;
+		margin: auto;
+	
+	}
+	.container .search-area{
+
+	}
+	header{
+		margin-top:70px;
+	}
+	article{
+		margin-top:50px;
+	}
+	article table{
+		/*픽스 */
+	}
+	.hide{
+		visibility:hidden; 
+	}
+	.search-area .text-group{
+		width: 25%;
+		float: left;
+	}
+	.search-area .chk-author{
+		width:20%;
+		float: left;
+		margin:10px 2.5% 0 10%;
+	}
+	.search-area .btn-search{
+		width:10%;
+		float: left;
+		margin-left:5%;
+	}
+	.pickMeUp{
+		margin:0 auto;
+		margin-top:50px;
+		text-align: center;
+	}
+	.pickMeUp .btn-pick{
+		width:25%;
+		text-align: center;
+	}
+@media only screen and (max-width: 768px) {
+	.search-area .text-group{
+		width: 75%;
+		float: left;
+	}
+	.search-area .chk-author{
+		width:28%;
+		float: left;
+		margin:10px 2.5% 10px 2.5%;
+	}
+	.search-area .btn-search{
+		width:20%;
+		float: left;
+		margin-left:5%;
+	}
+}
